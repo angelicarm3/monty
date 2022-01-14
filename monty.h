@@ -62,10 +62,14 @@ void div_stack(stack_t **top, unsigned int line_number);
 void mul_stack(stack_t **top, unsigned int line_number);
 void mod_stack(stack_t **top, unsigned int line_number);
 void pchar_stack(stack_t **top, unsigned int line_number);
-void pstr_stack(stack_t **top, unsigned int line_number __attribute__((unused)));
-void rotl_stack(stack_t **top, unsigned int line_number __attribute__((unused)));
-void rotr_stack(stack_t **top, unsigned int line_number __attribute__((unused)));
-void push_queue(stack_t **top, unsigned int line_number __attribute__((unused)));
+void pstr_stack(stack_t **top,
+		unsigned int line_number __attribute__((unused)));
+void rotl_stack(stack_t **top,
+		unsigned int line_number __attribute__((unused)));
+void rotr_stack(stack_t **top,
+		unsigned int line_number __attribute__((unused)));
+void push_queue(stack_t **top,
+		unsigned int line_number __attribute__((unused)));
 int is_comment(char *s);
 int is_number(char *s);
 

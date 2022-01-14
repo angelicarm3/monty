@@ -7,27 +7,22 @@
  * @line_number: Line count
  *
  */
-void rotr_stack(stack_t **top, unsigned int line_number __attribute__((unused)))
+void rotr_stack(stack_t **top,
+		unsigned int line_number __attribute__((unused)))
 {
-  stack_t *ptr = *top;
-  
-  /* EDGE case: If the stack is empty or only one node*/
-  if (*top == NULL || top == NULL || (*top)->next == NULL)
-    return;
-     
-  else
-    {
-      while (ptr->next != NULL)
-	ptr = ptr->next;
+	stack_t *ptr = *top;
+/* EDGE case: If the stack is empty or only one node*/
+	if (*top == NULL || top == NULL || (*top)->next == NULL)
+		return;
+	while (ptr->next != NULL)
+		ptr = ptr->next;
 
-      ptr->next = *top;
-      (*top)->prev = ptr;
-      ptr->prev->next = NULL;
-      ptr->prev = NULL;
-      *top = ptr;
-    }
+	ptr->next = *top;
+	(*top)->prev = ptr;
+	ptr->prev->next = NULL;
+	ptr->prev = NULL;
+	*top = ptr;
 }
-
 
 /**
  * push_queue - Function that enqueue a node at the rear of a stack_t queue.
@@ -61,16 +56,15 @@ void push_queue(stack_t **top,
 
 	/* EDGE case: list is empty */
 	if (*top == NULL)
-                *top = new_queue;
+		*top = new_queue;
 	else
-	  {
-	    /* Iterate *ptr until the last node of queue */
-	    while (ptr->next != NULL)
-	      ptr = ptr->next;
-	    
-	    ptr->next = new_queue;
-	    new_queue->prev = ptr;
-	  }
+	{
+/* Iterate *ptr until the last node of queue */
+		while (ptr->next != NULL)
+			ptr = ptr->next;
+		ptr->next = new_queue;
+		new_queue->prev = ptr;
+	}
 }
 
 /**
@@ -101,10 +95,11 @@ int is_number(char *s)
 	{
 		if (*s >= '0' && *s <= '9')
 			s++;
+
 		else
 		{
 			return (1);
 		}
-    }
+	}
 	return (0);
 }

@@ -129,7 +129,7 @@ void pop_stack(stack_t **top, unsigned int line_number)
  */
 void swap_stack(stack_t **top, unsigned int line_number)
 {
-	/* EDGE case: If the stack contains less than two elements */
+/* EDGE case: If the stack contains less than two elements */
 	if (*top == NULL || top == NULL)
 	{
 		dprintf(2, "L%d: can't swap, stack too short\n", line_number);
@@ -137,9 +137,9 @@ void swap_stack(stack_t **top, unsigned int line_number)
 	}
 	else if ((*top)->next == NULL)
 	{
-		 dprintf(2, "L%d: can't swap, stack too short\n", line_number);
-		 free(*top);
-		 exit(EXIT_FAILURE);
+		dprintf(2, "L%d: can't swap, stack too short\n", line_number);
+		free(*top);
+		exit(EXIT_FAILURE);
 	}
 	else
 	{

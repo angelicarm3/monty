@@ -113,28 +113,28 @@ void pchar_stack(stack_t **top, unsigned int line_number)
  * @line_number: Line count
  *
  */
-void pstr_stack(stack_t **top, unsigned int line_number __attribute__((unused)))
+void pstr_stack(stack_t **top,
+		unsigned int line_number __attribute__((unused)))
 {
-  stack_t *ptr = *top;
-  
-  if (*top == NULL || top == NULL)
-    {
-      printf("\n");
-    }
-  else
-    {
-      while(ptr != NULL)
+	stack_t *ptr = *top;
+
+	if (*top == NULL || top == NULL)
+		printf("\n");
+
+	else
 	{
-	  if ((ptr)->n >= 65 && (ptr)->n <= 90)
-	    printf("%c", (ptr)->n);
-	  else if ((ptr)->n >= 97 && (ptr)->n <= 122)
-	    printf("%c", (ptr)->n);
-	  else
-	    break;
-	  ptr = (ptr)->next;
+		while (ptr != NULL)
+		{
+			if ((ptr)->n >= 65 && (ptr)->n <= 90)
+				printf("%c", (ptr)->n);
+			else if ((ptr)->n >= 97 && (ptr)->n <= 122)
+				printf("%c", (ptr)->n);
+			else
+				break;
+			ptr = (ptr)->next;
+		}
+		printf("\n");
 	}
-      printf("\n");
-    }
 }
 
 /**
@@ -144,23 +144,20 @@ void pstr_stack(stack_t **top, unsigned int line_number __attribute__((unused)))
  * @line_number: Line count
  *
  */
-void rotl_stack(stack_t **top, unsigned int line_number __attribute__((unused)))
+void rotl_stack(stack_t **top,
+		unsigned int line_number __attribute__((unused)))
 {
-  stack_t *ptr = *top;
-  
-  /* EDGE case: If the stack is empty */
-  if (*top == NULL || top == NULL || (*top)->next == NULL)
-    return;
-    
-  else
-    {
-      while (ptr->next != NULL)
-	ptr = ptr->next;
+	stack_t *ptr = *top;
+/* EDGE case: If the stack is empty */
+	if (*top == NULL || top == NULL || (*top)->next == NULL)
+		return;
 
-      (*top) = (*top)->next;
-      ptr->next = (*top)->prev;
-      (*top)->prev->next = NULL;
-      (*top)->prev->prev = ptr;
-      (*top)->prev = NULL;
-    }
+	while (ptr->next != NULL)
+		ptr = ptr->next;
+
+	(*top) = (*top)->next;
+	ptr->next = (*top)->prev;
+	(*top)->prev->next = NULL;
+	(*top)->prev->prev = ptr;
+	(*top)->prev = NULL;
 }
